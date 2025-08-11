@@ -16,11 +16,27 @@ def main():
 if __name__ == "__main__":
     main()
 # TODO:
-# - Tipper hinzufügen
-# - Tipper löschen
-# - Tipper bearbeiten
-# - Tipper anzeigen
-# - Tipper sortieren
-# - Tipper filtern
-# - Tipper exportieren
-# - Tipper importieren
+# - # Platzhalter für zukünftige Features (TODOs)
+def add_tipper():
+    pass
+
+def delete_tipper():
+    pass
+
+def edit_tipper():
+    pass
+
+def show_tipper():
+    pass
+
+def sort_tipper():
+    pass
+
+def filter_tipper():
+    pass
+
+def export_tipper():
+    pass
+
+def import_tipper():
+    pass
