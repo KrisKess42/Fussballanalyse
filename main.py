@@ -1,3 +1,6 @@
+#Stand: 2025-08-21 [18:33 Uhr]
+
+
 #!/usr/bin/env python3
 """
 Hauptprogramm für das Fußball-Tippspiel
