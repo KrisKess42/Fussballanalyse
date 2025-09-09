@@ -1,4 +1,4 @@
-#Stand: 08.09.2025 [20:35 Uhr]
+#Stand: 09.09.2025 [19:49 Uhr]
 
 #!/usr/bin/env python3
 """
