@@ -7,7 +7,7 @@ Hauptprogramm für das Fußball-Tippspiel
 # Klasse zur Erstellung von Teilnehmern:
 
 class Teilnehmer:
-    def __init__(self, name, alter, email):
+    def __init__(self, name, alter, email, nummer):
         self.name = name
         self.alter = alter
         self.email = email
@@ -51,6 +51,10 @@ class Tipp:
         print(f"Tipp {self.index} vom {self.datum} für Teilnehmer {self.teilnehmernummer}")
         for s in self.spiele:
             print(f"{s['heim']} {s['tore_heim']} : {s['tore_ausw']} {s['ausw']}")
+
+teilnehmer = []
+tippper = Teilnehmer.neu_anlegen()
+
 
 tipp1 = Tipp(index=1, datum="2025-09-20", teilnehmernummer=1)
 
