@@ -1,44 +1,25 @@
-#Stand: 09.09.2025 [19:49 Uhr]
+#Stand: 20.09.2025 [12:19 Uhr]
 
-#!/usr/bin/env python3
+
 """
 Hauptprogramm für das Fußball-Tippspiel
 """
 
-from data import teams, season_matches
-from menu import show_menu, tipper_list, tipps_list
+class Teilnehmer:
+    def __init__(self, name, alter, email):
+        self.name = name    
+        self.alter = alter
+        self.email = email
 
-def main():
-    print("=== Fußball-Tippspiel ===")
-    print("Willkommen zum Fußball-Tippspiel!")
-    
-    # Starte das Hauptmenü
-    show_menu()
+    @classmethod
+    def neu_anlegen(cls):
+        name = input("Name: ")
+        alter = int(input("Alter: "))
+        email = input("E-Mail: ")
+        return cls(name, alter, email)  # cls() erzeugt eine neue Instanz
 
-if __name__ == "__main__":
-    main()
-# TODO:
-# - # Platzhalter für zukünftige Features (TODOs)
-def add_tipper():
-    pass
 
-def delete_tipper():
-    pass
 
-def edit_tipper():
-    pass
+t = Teilnehmer.neu_anlegen()
 
-def show_tipper():
-    pass
-
-def sort_tipper():
-    pass
-
-def filter_tipper():
-    pass
-
-def export_tipper():
-    pass
-
-def import_tipper():
-    pass
+print(t)
