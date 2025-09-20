@@ -4,7 +4,7 @@
 """
 Hauptprogramm für das Fußball-Tippspiel
 """
-
+# Klasse zur Erstellung von Teilnehmern:
 class Teilnehmer:
     def __init__(self, name, alter, email):
         self.name = name    
@@ -22,11 +22,35 @@ class Teilnehmer:
     def name_aendern(self):
         self.name = input("Gib bitte den neuen Namen ein!")
 
+partien = [
+    {"heim": "Eintracht Frankfurt", "ausw": "Union Berlin"},
+    {"heim": "Bayern München", "ausw": "Borussia Dortmund"},
+    {"heim": "RB Leipzig", "ausw": "VfL Wolfsburg"}
+]
 
-t = Teilnehmer.neu_anlegen()
+class Tipp:
+    def __init__(self, index, datum, teilnehmernummer):
+        self.index = index
+        self.datum = datum
+        self.teilnehmernummer = teilnehmernummer
+        # kopiere die Partien für diese Instanz, um eigene Tore einzugeben
+        self.spiele = [dict(spiel, tore_heim=None, tore_ausw=None) for spiel in partien]
 
-print(t.name)
+    def tippen(self):
+        print(f"Tipp {self.index} für Teilnehmer {self.teilnehmernummer}")
+        for s in self.spiele:
+            s['tore_heim'] = int(input(f"Tore {s['heim']}: "))
+            s['tore_ausw'] = int(input(f"Tore {s['ausw']}: "))
 
-t.name_aendern()
-#Kontrolle:
-print(t.name)
+    def anzeigen(self):
+        print(f"Tipp {self.index} vom {self.datum} für Teilnehmer {self.teilnehmernummer}")
+        for s in self.spiele:
+            print(f"{s['heim']} {s['tore_heim']} : {s['tore_ausw']} {s['ausw']}")
+
+tipp1 = Tipp(index=1, datum="2025-09-20", teilnehmernummer=1)
+
+# Teilnehmer gibt seine Tipps ein
+tipp1.tippen()
+
+# Tipp anzeigen
+tipp1.anzeigen()
