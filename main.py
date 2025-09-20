@@ -56,7 +56,7 @@ teilnehmer = []
 tippper = Teilnehmer.neu_anlegen()
 
 
-tipp1 = Tipp(index=1, datum="2025-09-20", teilnehmernummer=1)
+tipp1 = Tipp(index=1, datum="2025-09-20", teilnehmernummer=input("Bitte gib deine Teilnehmernummer ein"))
 
 # Teilnehmer gibt seine Tipps ein
 tipp1.tippen()
