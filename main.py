@@ -5,18 +5,23 @@
 Hauptprogramm für das Fußball-Tippspiel
 """
 # Klasse zur Erstellung von Teilnehmern:
+
 class Teilnehmer:
     def __init__(self, name, alter, email):
-        self.name = name    
+        self.name = name
         self.alter = alter
         self.email = email
-
+        self.nummer = None  # optional, eigene ID
+    
     @classmethod
     def neu_anlegen(cls):
         name = input("Name: ")
         alter = int(input("Alter: "))
         email = input("E-Mail: ")
-        return cls(name, alter, email)  # cls() erzeugt eine neue Instanz
+        nummer = len(teilnehmer) + 1  # Nummer = nächster Index in der Liste
+        t = cls(name, alter, email, nummer)
+        teilnehmer.append(t)  # gleich zur Liste hinzufügen
+        return t
    
     # Instanzmethode zum Ändern des Namens
     def name_aendern(self):
