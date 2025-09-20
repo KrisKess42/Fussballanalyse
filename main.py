@@ -17,9 +17,16 @@ class Teilnehmer:
         alter = int(input("Alter: "))
         email = input("E-Mail: ")
         return cls(name, alter, email)  # cls() erzeugt eine neue Instanz
-
+   
+    # Instanzmethode zum Ändern des Namens
+    def name_aendern(self, neuer_name):
+        self.name = neuer_name
 
 
 t = Teilnehmer.neu_anlegen()
 
-print(t)
+print(t.name)
+
+name_aendern("Enrico")
+
+print(t.name)
