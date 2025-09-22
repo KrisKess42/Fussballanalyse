@@ -69,4 +69,11 @@ def teilnehmerliste_ausgeben():
     for t in teilnehmer:
         print(t.name, t.email)
 
+def partien_anzeigen():
+    for s in partien:
+        print(s["heim"], " - ", s["ausw"], s["tore_heim"], ":", s["tore_ausw"])
+
+partien_anzeigen()
 teilnehmerliste_ausgeben()
+
+
