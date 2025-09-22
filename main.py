@@ -1,4 +1,4 @@
-#Stand: 20.09.2025 [12:19 Uhr]
+#Stand: 22.09.2025 [16:14 Uhr]
 
 
 """
@@ -11,7 +11,7 @@ class Teilnehmer:
         self.name = name
         self.alter = alter
         self.email = email
-        self.nummer = None  # optional, eigene ID
+        self.nummer = nummer
     
     @classmethod
     def neu_anlegen(cls):
@@ -21,6 +21,7 @@ class Teilnehmer:
         nummer = len(teilnehmer) + 1  # Nummer = nächster Index in der Liste
         t = cls(name, alter, email, nummer)
         teilnehmer.append(t)  # gleich zur Liste hinzufügen
+        print("deine Teilnehmernummer: ", t.nummer)
         return t
    
     # Instanzmethode zum Ändern des Namens
@@ -28,9 +29,9 @@ class Teilnehmer:
         self.name = input("Gib bitte den neuen Namen ein!")
 
 partien = [
-    {"heim": "Eintracht Frankfurt", "ausw": "Union Berlin"},
-    {"heim": "Bayern München", "ausw": "Borussia Dortmund"},
-    {"heim": "RB Leipzig", "ausw": "VfL Wolfsburg"}
+    {"heim": "Eintracht Frankfurt", "ausw": "Union Berlin", "tore_heim": None, "tore_ausw": None},
+    {"heim": "Bayern München", "ausw": "Borussia Dortmund", "tore_heim": None, "tore_ausw": None},
+    {"heim": "RB Leipzig", "ausw": "VfL Wolfsburg", "tore_heim": None, "tore_ausw": None}
 ]
 
 class Tipp:
@@ -56,10 +57,16 @@ teilnehmer = []
 tippper = Teilnehmer.neu_anlegen()
 
 
-tipp1 = Tipp(index=1, datum="2025-09-20", teilnehmernummer=input("Bitte gib deine Teilnehmernummer ein"))
+tipp1 = Tipp(index=1, datum="2025-09-20", teilnehmernummer=input("Bitte gib deine Teilnehmernummer ein: "))
 
 # Teilnehmer gibt seine Tipps ein
-tipp1.tippen()
+#tipp1.tippen()
 
 # Tipp anzeigen
-tipp1.anzeigen()
+#tipp1.anzeigen()
+
+def teilnehmerliste_ausgeben():
+    for t in teilnehmer:
+        print(t.name, t.email)
+
+teilnehmerliste_ausgeben()
